@@ -15,5 +15,5 @@ datasource db {
 model Item {
   id        Int      @id @default(autoincrement())
   name      String
-  value     Int
+  value     Float
 }
