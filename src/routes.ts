@@ -1,8 +1,7 @@
 // Config
 import { Router } from 'express'
 
-import { todoSetupRequest } from './controllers'
-import { getAllItems, getSingleItem } from './controllers/items.controller'
+import { addItem, deleteItem, getAllItems, getSingleItem, updateItem } from './controllers/items.controller'
 
 const routes = Router()
 
@@ -11,11 +10,11 @@ routes.get('/', getAllItems)
 
 routes.get('/items/:id', getSingleItem)
 
-routes.post('/items', todoSetupRequest)
+routes.post('/items', addItem)
 
-routes.put('/items/:id', todoSetupRequest)
+routes.put('/items/:id', updateItem)
 
-routes.delete('items:id', todoSetupRequest)
+routes.delete('/items/:id', deleteItem)
 
 // Exporting routes to server.ts
 export { routes }
